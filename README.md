@@ -1,34 +1,34 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Getting Started
 
 First, run the development server:
 
-```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## About the application
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Running Instructions:
+1- Open the zipped folder in any code editor.
+2- Run the command “npm install” to install the node modules folder first.
+3- Run the command “npm run dev” to run the application (runs on localhost:3000).
+4- In order to view the mobile view and mobile view —> open inspect and change views from toggle device toolbar
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+How was it done:
+⁃ Started by creating a local JSON file to store all the information required for the posts.
+⁃ Then proceeded by creating our two main pages:
+⁃ The home page:
+⁃ Implemented in “index.tsx” which is navigated to using “/“. This page starts by fetching the data using “getStaticProps” from the JSON file. Then the fetched data is input to the component to use it to display the posts.
+⁃ Local Storage is used to store the liked posts in an array “favorites” where on the initial render using the useEffect we get the value of favorites item if exists and store in a state.
+⁃ Whenever this state changes its value the local storage variable is updated as well the state value.
+⁃ useRef is used also to the presist values upon refreshing.
+⁃ The state is trigged whenever the user presses the like button whether to like or to unlike (like —> added to local storage, unlike —> removed form local storage).
+⁃ Double clicking on the image will like the picture also.
+⁃ The likes page:
+⁃ It has the same implemented functionality as the home page.
+⁃ The only difference is that it displays only the liked posts which are retrieved from the local storage.
+⁃ The user can also unlike the post which will be then removed from the page as well as the local storage array.
+⁃ However the user cannot like any posts.
+⁃ The pages are styled using sass which are placed inside the public folder.
+⁃ Typescript is used in the project.
+⁃ The functionality of the tags, likes, comments links don’t work.
